@@ -102,7 +102,7 @@ update_state (ExmInstallButton *button)
     const gchar *tooltip;
     ExmInstallButtonState state;
 
-    tooltip = _("This extension is incompatible with your current version of GNOME.");
+    tooltip = _("This extension is incompatible with your current version of GNOME");
     state = button->state;
 
     gtk_widget_remove_css_class (GTK_WIDGET (button), "warning");
