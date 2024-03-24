@@ -10,56 +10,52 @@ template $ExmInstalledPage : Gtk.Widget {
 		Gtk.ScrolledWindow {
 			vexpand: true;
 
-			Gtk.Box {
-				orientation: vertical;
+			Adw.Clamp {
+				Gtk.Box {
+				  styles ["content"]
+					orientation: vertical;
+					spacing: 10;
 
-				Adw.Clamp {
-					Gtk.Box {
-					  styles ["content"]
-						orientation: vertical;
-						spacing: 10;
+					Gtk.ListBox {
+						styles ["boxed-list"]
+						valign: start;
+						selection-mode: none;
 
-						Gtk.ListBox {
-							styles ["boxed-list"]
-							valign: start;
-							selection-mode: none;
-
-							Adw.SwitchRow global_toggle {
-								[prefix]
-								Gtk.Image {
-									icon-name: 'puzzle-piece-symbolic';
-								}
-
-								title: _("Use Extensions");
-								subtitle: _("Extensions can cause performance and stability issues.");
+						Adw.SwitchRow global_toggle {
+							[prefix]
+							Gtk.Image {
+								icon-name: 'puzzle-piece-symbolic';
 							}
-						}
 
-						Gtk.Label {
-							styles ["heading"]
-							xalign: 0;
-							margin-top: 20;
-							label: _("User-Installed Extensions");
+							title: _("Use Extensions");
+							subtitle: _("Extensions can cause performance and stability issues.");
 						}
+					}
 
-						Gtk.ListBox user_list_box {
-							styles ["boxed-list", "boxed-list-placeholder"]
-							valign: start;
-							selection-mode: none;
-						}
+					Gtk.Label {
+						styles ["heading"]
+						xalign: 0;
+						margin-top: 20;
+						label: _("User-Installed Extensions");
+					}
 
-						Gtk.Label {
-							styles ["heading"]
-							xalign: 0;
-							margin-top: 20;
-							label: _("System Extensions");
-						}
+					Gtk.ListBox user_list_box {
+						styles ["boxed-list", "boxed-list-placeholder"]
+						valign: start;
+						selection-mode: none;
+					}
 
-						Gtk.ListBox system_list_box {
-							styles ["boxed-list", "boxed-list-placeholder"]
-							valign: start;
-							selection-mode: none;
-						}
+					Gtk.Label {
+						styles ["heading"]
+						xalign: 0;
+						margin-top: 20;
+						label: _("System Extensions");
+					}
+
+					Gtk.ListBox system_list_box {
+						styles ["boxed-list", "boxed-list-placeholder"]
+						valign: start;
+						selection-mode: none;
 					}
 				}
 			}
