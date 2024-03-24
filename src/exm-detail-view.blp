@@ -92,6 +92,7 @@ template $ExmDetailView : Adw.NavigationPage {
 												styles ["title-1"]
 												xalign: 0;
 												ellipsize: end;
+												selectable: true;
 											}
 
 											Gtk.Label ext_author {
@@ -99,6 +100,7 @@ template $ExmDetailView : Adw.NavigationPage {
 												label: "Author";
 												xalign: 0;
 												ellipsize: end;
+												selectable: true;
 											}
 										}
 
@@ -137,6 +139,7 @@ template $ExmDetailView : Adw.NavigationPage {
 
 										label: _("Description");
 										xalign: 0;
+										selectable: true;
 									}
 
 									Gtk.Label ext_description {
@@ -153,7 +156,7 @@ template $ExmDetailView : Adw.NavigationPage {
 								Gtk.Box {
 									orientation: vertical;
 
-									Gtk.Label {
+									Gtk.Label links_label {
 										styles ["title-4", "detail-heading"]
 
 										label: _("Links");
@@ -198,6 +201,10 @@ template $ExmDetailView : Adw.NavigationPage {
 												icon-name: "external-link-symbolic";
 											}
 										}
+
+										accessibility {
+											labelled-by: links_label;
+										}
 									}
 								}
 
@@ -209,6 +216,7 @@ template $ExmDetailView : Adw.NavigationPage {
 
 										label: _("User Reviews");
 										xalign: 0;
+										selectable: true;
 									}
 
 									// TODO: Abstract into common class
