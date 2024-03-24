@@ -32,7 +32,7 @@ template $ExmInstalledPage : Gtk.Widget {
 						}
 					}
 
-					Gtk.Label {
+					Gtk.Label user_list_title {
 						styles ["heading"]
 						xalign: 0;
 						margin-top: 20;
@@ -43,9 +43,13 @@ template $ExmInstalledPage : Gtk.Widget {
 						styles ["boxed-list", "boxed-list-placeholder"]
 						valign: start;
 						selection-mode: none;
+
+						accessibility {
+							labelled-by: user_list_title;
+						}
 					}
 
-					Gtk.Label {
+					Gtk.Label system_list_title {
 						styles ["heading"]
 						xalign: 0;
 						margin-top: 20;
@@ -56,6 +60,10 @@ template $ExmInstalledPage : Gtk.Widget {
 						styles ["boxed-list", "boxed-list-placeholder"]
 						valign: start;
 						selection-mode: none;
+
+						accessibility {
+							labelled-by: system_list_title;
+						}
 					}
 				}
 			}
@@ -84,7 +92,7 @@ template $ExmInstalledPage : Gtk.Widget {
 					valign: center;
 					hexpand: true;
 
-					Gtk.Label {
+					Gtk.Label updates_title {
 						styles ["heading"]
 
 						xalign: 0;
@@ -108,6 +116,11 @@ template $ExmInstalledPage : Gtk.Widget {
 					label: _("Log Out");
 					action-name: "app.logout";
 				}
+			}
+
+			accessibility {
+				labelled-by: updates_title;
+				described-by: num_updates_label;
 			}
 		}
 	}
